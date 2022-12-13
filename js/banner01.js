@@ -8,6 +8,14 @@ $(function () {
         $('.topBanner2 .inner').slideToggle();
     });
 
+    $('.leftBanner i').on('click', function () {
+        $('.leftBanner').toggleClass('on');
+    });
+
+    $('.rightBanner i').on('click', function () {
+        $('.rightBanner').toggleClass('on');
+    });
+
     $('.bottomBanner i').on('click', function () {
         $('.bottomBanner .inner').slideToggle();
     });

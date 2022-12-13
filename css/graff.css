@@ -1,36 +1,45 @@
-.header .topBanner {    
+/* 슬라이드 버튼 누를때 반짝이는거 */
+.slick-track,
+.slick-list {
+    transition-delay: 0.03s;
+}
+
+
+
+/* topBanner */
+.topBanner {
     position: relative;
     background: #f9f9f9;
     padding: 50px 0;
     transition: padding 0.5s;
 }
 
-.header .topBanner.on {
+.topBanner.on {
     height: 0;
     padding: 0 0;
     overflow: hidden;
 }
 
-.header .inner {
+.inner {
     position: relative;
     width: 1200px;
     margin: 0 auto;
 }
 
-.header .topBanner h2 {
+.topBanner h2 {
     font-size: 30px;
     font-weight: 700;
     margin: 0 0 10px 0;
 }
 
-.header .topBanner i {
+.topBanner i {
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 25px;   
+    font-size: 25px;
 }
 
-.header .topBanner a {
+.topBanner a {
     margin: 0 0 0 15px;
     padding: 3px 20px 5px 20px;
     border: 1px solid #ddd;
@@ -39,3 +48,583 @@
     font-size: 12px;
     vertical-align: 2px;
 }
+
+
+
+
+
+
+/* header */
+.header {}
+
+.header h1 {
+    font-size: 0;
+    /* 로고 중앙 맞출려고 */
+}
+
+.header .inner {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 100px;
+}
+
+.header .gnb {
+    margin: 0 0 0 100px;
+}
+
+.header .gnb>ul {
+    display: flex;
+    gap: 40px;
+}
+
+.header .gnb>ul>li {
+    position: relative;
+}
+
+.header .gnb>ul>li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translate(0%, -40%);
+    width: 1px;
+    height: 12px;
+}
+
+.header .gnb>ul a {
+    display: block;
+}
+
+.header .right {
+    margin: 0 0 0 auto;
+}
+
+
+
+
+
+/* mainSlide */
+.mainVisual {
+    position: relative;
+}
+
+.mainVisual .mainSlide figure {
+    position: relative;
+    height: 600px;
+}
+
+.mainVisual .mainSlide .itm01 {
+    background: url(../images/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .mainSlide .itm02 {
+    background: url(../images/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .mainSlide .itm03 {
+    background: url(../images/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.mainVisual .mainSlide .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+}
+
+.mainVisual .mainSlide .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    background: none;
+    border: none;
+
+    font-size: 0;
+
+    width: 100px;
+    height: 100px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mainVisual .mainSlide .slick-prev {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    margin: 0 0 0 -700px;
+}
+
+.mainVisual .mainSlide .slick-next {
+    transform: translate(-50%, -50%) rotate(135deg);
+    margin: 0 0 0 700px;
+}
+
+.mainVisual .mainSlide .slick-dots {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.mainVisual .mainSlide .slick-dots>li {
+    display: inline-block;
+    /* display: flex; 안쓴다 */
+    width: 100px;
+    height: 4px;
+    background: tomato;
+    margin: 0 2px;
+    border-radius: 5px;
+}
+
+.mainVisual .mainSlide .slick-dots>li.slick-active {
+    background: #333;
+}
+
+.mainVisual .mainSlide .slick-dots>li button {
+    display: none;
+}
+
+.mainVisual .mainSlide h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    text-shadow: 0 0 3px #000;
+    color: #fff;
+}
+
+.mainVisual .mainSlide p {
+    font-size: 17px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+    text-shadow: 0 0 1px #000;
+    color: #fff;
+}
+
+.mainVisual .mainSlide .inner a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.mainVisual .main_dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 1200px;
+    background: #333;
+    color: #fff;
+
+    display: flex;
+}
+
+.mainVisual .main_dots li {
+    flex: 1;
+    padding: 8px 20px;
+}
+
+.mainVisual .main_num {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin: 0 0 0 600px;
+    transform: translate(-100%, 0);
+
+    width: 50px;
+    height: 50px;
+    background: #333;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+}
+
+.mainVisual .main_dots li.on {
+    background: #ff6347;
+}
+
+.mainVisual .main_dots li~li {
+    border-left: 1px solid #999;
+}
+
+
+
+
+
+
+/* mainContent */
+.mainContent {
+    padding: 100px 0;
+}
+
+.mainContent h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.mainContent p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.mainContent .inner {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.mainContent .inner figure {
+    flex: 1;
+    text-align: center;
+}
+
+.mainContent figure img {
+    width: 100%;
+}
+
+.mainContent .img_box {
+    position: relative;
+    margin: 0 0 20px 0;
+    overflow: hidden;
+}
+
+.mainContent .img_box .service {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    background: #333;
+    color: #fff;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: column; flex의 방향을 세로로 */
+    justify-content: center;
+    /* 세로의 센터 */
+    gap: 20px;
+    padding: 0 10px;
+
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.mainContent .img_box:hover .service {
+    right: 0;
+}
+
+.mainContent .img_box img {
+    transition: 0.3s;
+}
+
+.mainContent .img_box:hover img {
+    transform: translate(-20px, 0);
+}
+
+.mainContent strong {
+    display: block;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.mainContent a {
+    display: inline-block;
+    /* 구매하기 글자에서 글자 수가 많아져도 거기에 맞춰서
+    수정됨 display: inline-block; */
+    padding: 5px 25px;
+    background: #333;
+    color: #fff;
+}
+
+.mainContent a:hover {
+    background: #ff6347;
+    color: #fff;
+}
+
+/* .mainBanner */
+.mainBanner {
+    padding: 100px 0;
+    text-align: center;
+    background: url(../images/mainvisual03.jpg) no-repeat fixed center center/cover;
+    color: #fff;
+
+    filter: grayscale(1);
+    /* 이미지 흑백 */
+}
+
+.mainBanner h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.mainBanner p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+
+    /* backdrop-filter: blur(10px);
+    padding: 50px 0; */
+}
+
+.mainBanner i {
+    background: #333;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.mainBanner span {
+    vertical-align: 2px;
+    margin: 0 10px 0 0;
+    /* more 중앙에 오게 하기 위해 미세조정 */
+}
+
+
+
+
+
+/* mainProduct */
+.mainProduct {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.mainProduct h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.mainProduct p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+}
+
+.mainProduct img {
+    width: 100%;
+}
+
+.mainProduct figure {
+    padding: 0 15px 20px 15px;
+}
+
+.mainProduct .inner {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* outline: 1px solid tomato; */
+}
+
+.mainProduct .main_pro_slide {
+    margin: 0 -15px;
+    /* outline: 1px solid tomato; */
+    /* 음수마진 줘서 박스 사이즈를 inner사이즈 보다 크게줌 (박스가
+    넘치게 커짐) */
+}
+
+.mainProduct .arrows a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 37px;
+    height: 75px;
+    font-size: 0;
+}
+
+.mainProduct .arrows .prev {
+    background: url(../images/prev.png);
+    margin: 0 0 0 -700px;
+}
+
+.mainProduct .arrows .next {
+    background: url(../images/next.png);
+    margin: 0 0 0 700px;
+}
+
+.mainProduct .img_box {
+    margin: 0 0 15px 0;
+}
+
+.mainProduct .slick-dots {
+    margin: 20px 0 0 0;
+}
+
+.mainProduct .slick-dots li {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.mainProduct .slick-dots button {
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    background: #ff6347;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 50%;
+}
+
+
+
+
+/* mainCustomer */
+.mainCustomer {
+    padding: 100px 0;
+    background: #f9f9f9;
+}
+
+.mainCustomer .inner {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.mainCustomer .inner>div {
+    flex: 1;
+    overflow: hidden;
+}
+
+.mainCustomer .tab_menu {
+    display: table;
+    width: 100%;
+}
+
+.mainCustomer .tab_menu>li {
+    display: table-cell;
+}
+
+.mainCustomer .tab_menu>li~li {
+    border-left: 1px solid transparent;
+}
+
+.mainCustomer .tab_menu>li a {
+    display: block;
+    padding: 10px 60px 10px 10px;
+    background: #ff6347;
+    color: #fff;
+}
+
+.mainCustomer .tab_menu>li.on a {
+    background: #333;
+}
+
+.mainCustomer .tab_content>li {
+    display: none;
+    line-height: 36px;
+}
+
+.mainCustomer .tab_content>li.on {
+    display: block;
+}
+
+.mainCustomer .tab_content>li a {
+    white-space: nowrap;
+    /*  white-space: nowrap; 박스가 늘어남
+    -> overflow: hidden; 때려줌 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 글자 말 줄이기 */
+}
+
+.mainCustomer .tab_content>li li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.mainCustomer .tab_content>li li span {
+    margin: 0 0 0 20px;
+}
+
+.mainCustomer .right img {
+    width: 100%;
+}
+
+
+
+
+/* footer */
+.footer {
+    background: #343a40;
+    color: #f8f9fa;
+    padding: 0 0 50px 0;
+}
+
+.footer .top {
+    line-height: 80px;
+    border-bottom: 1px solid #555;
+}
+
+.footer .inner {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .top .left {
+    font-size: 0;
+    /* 단어 사이 공간이 생겨서 없애줄려고 */
+}
+
+.footer .top .left li {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.footer .top .left li~li::before {
+    content: "";
+    margin: 0 20px;
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    background: #ddd;
+}
+
+.footer .top .right {
+    display: flex;
+    gap: 2px;
+}
+
+.footer .top .right i {
+    font-size: 20px;
+    padding: 10px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.footer .bottom {
+    line-height: 80px;
+}
+
+#f_link {
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    background: #343a40;
+    border: 1px solid #555;
+}
+
+/* #f_link option {
+    padding: 5px 20px;
+} */
